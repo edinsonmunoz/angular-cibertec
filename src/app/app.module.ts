@@ -11,7 +11,9 @@ import { FooterComponent } from './components/common/footer/footer.component';
 // Agregando modulo
 import { ProductsModule } from './views/products/products.module';
 
-@NgModule({
+import {routes} from './app.routing';
+
+ @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
@@ -19,7 +21,8 @@ import { ProductsModule } from './views/products/products.module';
   ],
   imports: [
     BrowserModule,
-    ProductsModule // Agregando modulo
+    ProductsModule, // Agregando modulo
+    RouterModule.forRoot(routes) //Agregar por routing
   ],
   providers: [],
   bootstrap: [AppComponent]
