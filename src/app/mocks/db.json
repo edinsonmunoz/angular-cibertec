@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": 101,
+      "name": "Celular 1"
+    },
+    {
+      "id": 102,
+      "name": "Celular 1"
+    },
+    {
+      "id": 103,
+      "name": "Celular 1"
+    },
+    {
+      "id": 105,
+      "name": "Kenichi 2"
+    },
+    {
+      "id": 106,
+      "name": "Celular 1"
+    },
+    {
+      "name": "test 1",
+      "id": 107
+    },
+    {
+      "name": "test 1",
+      "id": 108
+    }
+  ]
+}

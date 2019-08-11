@@ -11,7 +11,10 @@ import { FooterComponent } from './components/common/footer/footer.component';
 // Agregando modulo
 import { ProductsModule } from './views/products/products.module';
 
+// Routing
 import {routes} from './app.routing';
+// HttpClient
+import { HttpClientModule } from '@angular/common/http';
 
  @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import {routes} from './app.routing';
   imports: [
     BrowserModule,
     ProductsModule, // Agregando modulo
-    RouterModule.forRoot(routes) //Agregar por routing
+    RouterModule.forRoot(routes), //Agregar por routing
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
