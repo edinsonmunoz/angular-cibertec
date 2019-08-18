@@ -1,32 +1,18 @@
 {
   "products": [
     {
-      "id": 101,
-      "name": "Celular 1"
+      "name": "TV Ld 24",
+      "detail": "11111111",
+      "price": "11111111",
+      "stock": "1233333",
+      "id": 112
     },
     {
-      "id": 102,
-      "name": "Celular 1"
-    },
-    {
-      "id": 103,
-      "name": "Celular 1"
-    },
-    {
-      "id": 105,
-      "name": "Kenichi 2"
-    },
-    {
-      "id": 106,
-      "name": "Celular 1"
-    },
-    {
-      "name": "test 1",
-      "id": 107
-    },
-    {
-      "name": "test 1",
-      "id": 108
+      "name": "Edinson",
+      "detalle": "Muñoz Guia",
+      "precio": "121.343",
+      "stock": "1111134",
+      "id": 113
     }
   ]
 }

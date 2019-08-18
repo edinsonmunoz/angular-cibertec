@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import Product from '../product.model';
-import {SortPipe} from '../shared/pipes/sort.pipe';
 import { ProductsService } from '../shared/services/products.service';
 import { Subscription } from 'rxjs';
 
@@ -17,7 +16,6 @@ export class ListProductComponent implements OnInit, OnDestroy{
 
   // Por Constructor pasa el sortPipe
   constructor(
-    private sortPipe: SortPipe,
     private productsService: ProductsService
   ) { }
 
@@ -26,13 +24,6 @@ export class ListProductComponent implements OnInit, OnDestroy{
     this.productsService.getProducts().subscribe((products : Product[]) => {
       this.allProducts = products; 
     });
-  }
-
-  onSort(value: string){
-    this.sortPipe.transform(
-      this.allProducts,
-      value
-    );
   }
 
   onRemove(id: number){
@@ -44,7 +35,7 @@ export class ListProductComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy() {
-    this.updateSubs.unsubscribe();
+    //this.updateSubs.unsubscribe();
   }
 
 }

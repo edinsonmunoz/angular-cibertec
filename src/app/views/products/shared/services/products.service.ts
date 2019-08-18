@@ -22,27 +22,27 @@ export class ProductsService {
     ){}
 
     getProducts(){
-        const URL: string= `${this.api}/${this.endpoint}`;
+        const URL: string= `${this.api}/${this.endpoint}/`;
         return this.http.get(URL);
         //return this.products;
     }
 
     getProduct(id: number){
-        const URL: string= `${this.api}/${this.endpoint}/${id}`;
+        const URL: string= `${this.api}/${this.endpoint}/${id}/`;
         return this.http.get(URL);
         //const prod = this.products.filter(prod => prod.id === id);
         //return prod[0];
     }
 
     removeProduct(id: number){
-        const URL: string= `${this.api}/${this.endpoint}/${id}`;
+        const URL: string= `${this.api}/${this.endpoint}/${id}/`;
         return this.http.delete(URL);
        // this.products = this.products.filter(prod => prod.id!=id);
        // return this.products;
     }
 
     createProduct(product: Product){
-        const URL: string= `${this.api}/${this.endpoint}`;
+        const URL: string= `${this.api}/${this.endpoint}/`;
         return this.http.post(URL, product, {
             headers: {
                 'Content-type': 'application/json'
@@ -51,7 +51,7 @@ export class ProductsService {
     }
 
     updateProduct(product: Product){
-        const URL: string= `${this.api}/${this.endpoint}/${product.id}`;
+        const URL: string= `${this.api}/${this.endpoint}/${product.id}/`;
         return this.http.put(URL, product, {
             headers: {
                 'Content-type': 'application/json'

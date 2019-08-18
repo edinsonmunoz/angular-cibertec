@@ -31,8 +31,9 @@ export class EditProductComponent implements OnInit, OnDestroy{
       console.log('Console id: ', this.product);*/
   }
 
-  onSubmit(parametro){
-    this.productService.updateProduct({id: 105, name: 'Kenichi 2'})
+  onSubmit(product: Product){
+    product.id = this.product.id;
+    this.productService.updateProduct(product)
     .subscribe((product: Product) =>{
       this.router.navigate(['/products']);
     });
@@ -40,7 +41,9 @@ export class EditProductComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy() {
-    this.updateSubs.unsubscribe();
+    if(this.updateSubs){
+      this.updateSubs.unsubscribe();
+    }
   }
 
 }

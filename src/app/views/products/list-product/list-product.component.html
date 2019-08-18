@@ -1,24 +1,32 @@
+<h2>Listar Productos</h2>
 <div>
         <a [routerLink]="['/products/create']" class="btn btn-sm btn btn-primary" type="button">Crear Producto</a>&nbsp;
 </div>
 <br>
 <div>
-    <button  (click)="onSort('name');">Ordenar por nombre</button>
+    <!--<button  (click)="onSort('name');">Ordenar por nombre</button>-->
 </div>
+<br>
 <table class="table table-bordered">
     <thead>
         <tr>
             <td scope>#</td>
             <td scope>Nombre</td>
+            <td scope>Detalle</td>
+            <td scope>Precio</td>
+            <td scope>Stock</td>
             <td scope>Acciones</td>
         </tr> 
     </thead>
     <tbody>
         <tr appHover *ngFor="let prod of allProducts; let i =  index">
             <th scope="row">{{ i+1 }}</th>
-            <td>{{ prod.name | shortText: 10}}</td>  
+            <td>{{ prod.name }}</td>  
+            <td>{{ prod.detail }}</td>  <!--| shortText: 10-->
+            <td>{{ prod.price | currency : 'S/.'}}</td>  
+            <td>{{ prod.stock }}</td>  
             <td>
-                <button class="btn btn-sm btn-primary" type="button">Deshabilitar</button>&nbsp;
+                <!-- <button class="btn btn-sm btn-primary" type="button">Deshabilitar</button>&nbsp; -->
                 <a [routerLink]="['/products', prod.id]" class="btn btn-sm btn btn-primary" type="button">Ver Detalle</a>&nbsp;
                 <button class="btn btn-sm btn-danger" (click)="onRemove(prod.id)" type="button">Eliminar</button>
             </td>

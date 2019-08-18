@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import Product from '../../../product.model';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
     selector: 'app-product-form',
@@ -9,21 +9,32 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductFormComponent implements OnInit{
     
-    @Input() model: Product;
+    @Input() model: Product = new Product();
     @Input() type: string;
-    @Output() handleSubmit: EventEmitter<string> = new EventEmitter<string>();
+    @Output() handleSubmit: EventEmitter<Product> = new EventEmitter<Product>();
     buttonTitle: string = "";
 
-    constructor(){
-        
-    }
+    constructor(private location: Location){}
 
     ngOnInit(){
         this.buttonTitle = this.type === 'edit' ? 'Actualizar' : 'Crear';
+        if(this.type === 'edit'){
+           
+        }
     }
 
-    onChildClick(){
-        this.handleSubmit.emit(this.type === 'edit' ? 'Actualizar' : 'Crear');
+    onCancel(){
+        this.location.back();
+    }
+
+    onSubmit(form){
+        const  {valid, value} = form;
+        if(valid){
+            //const model = Object.assign({}, this.model, value);
+            this.handleSubmit.emit(value);
+        }
+        console.log(form)
+        //this.handleSubmit.emit();//this.type === 'edit' ? 'Actualizar' : 'Crear'
     }
 
     onBack(){
